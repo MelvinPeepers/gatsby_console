@@ -15,6 +15,7 @@ export async function getServerData() {
     const res = await fetch(`https://dog.ceo/api/breeds/image/random`);
 
     if (!res.ok) {
+      console.error("Fetch failed, status:", res.status);
       throw new Error(`Response failed with status: ${res.status}`);
     }
 
